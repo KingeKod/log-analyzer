@@ -7,7 +7,6 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "log_dir": "./logs",
     "report_dir": "./reports",
     "report_size": 100,
-    # "log_analyzer_path": "./logs_out/out.log",
     "log_analyzer_path": None,
     "error_threshold": 0.1,
 }

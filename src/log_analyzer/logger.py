@@ -1,6 +1,7 @@
 import logging
 import sys
 from logging import INFO
+from pathlib import Path
 from typing import Any, Optional
 
 import structlog
@@ -13,6 +14,7 @@ class Logger:
         Set up logging based on configuration log analyzer path
         """
         if log_analyzer_path is not None:
+            Path(log_analyzer_path).parent.mkdir(parents=True, exist_ok=True)
             logging.basicConfig(
                 format="%(message)s",
                 level=logging.INFO,

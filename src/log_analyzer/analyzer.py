@@ -8,7 +8,7 @@ from typing import Dict, Generator, Iterable, Optional, Union
 from .schemas import LogEntry, LogFile, UrlStats
 
 # Nginx log regex pattern - standard combined format with request_time at the end
-# Example: 192.168.1.1 - - [30/Jun/2017:10:15:30 +0300] "GET /api/users HTTP/1.1" 200 1234 "-" "Mozilla/5.0" 0.123 # noqa: E501
+# Example: 1.196.116.32 -  - [29/Jun/2017:03:50:22 +0300] "GET /api/users/2 HTTP/1.1" 200 927 "-" "Lynx/2.8.8dev.9 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/2.10.5" "-" "1498697422-2190034393-4708-9752759" "dc7161be3" 0.390 # noqa: E501
 NGINX_LOG_PATTERN = re.compile(
     r"^(?P<ip>[\d.]+)\s+"  # IP address
     r"(?P<id>\S+)\s+"  # id

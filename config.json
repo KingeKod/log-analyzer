@@ -1,6 +1,6 @@
 {
     "log_dir": "./logs",
-    "report_dir": "./reportssss",
+    "report_dir": "./reports",
     "report_size": 100,
     "error_threshold": 0.3
 }
