@@ -1,0 +1,49 @@
+[project]
+name = "log-analyzer"
+version = "0.0.1"
+description = "Nginx log analyzer with HTML report generation"
+authors = [
+    { name = "Log Analyzer", email = "loganalyzer@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "structlog>=24.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+    "flake8>=7.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/log_analyzer"]
+
+[tool.black]
+line-length = 100
+target-version = ['py313']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src/log_analyzer --cov-report=term-missing"
