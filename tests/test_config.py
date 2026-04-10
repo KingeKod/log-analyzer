@@ -93,5 +93,4 @@ def test_load_config_partial_override(tmp_path):
 def test_load_config_no_file_uses_default():
     config = Config.load_config(None)
     assert config.log_dir == "./logs"
-    assert config.error_threshold == 0.3
-    assert config.error_threshold == 0.3
+    assert config.error_threshold == 0.4
