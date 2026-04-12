@@ -24,3 +24,12 @@ clean:
 
 run:
 	uv run python -m src.log_analyzer.main
+
+docker-run:
+	docker build -t log-analyzer .
+
+docker-run:
+	docker run -v $$(pwd)/logs:/logs -v $$(pwd)/reports:/reports -v $$(pwd)/config.json:/app/config.json log-analyzer
+
+docker-bash:
+	docker run -it --rm -v $$(pwd)/logs:/logs -v $$(pwd)/reports:/reports log-analyzer bash
